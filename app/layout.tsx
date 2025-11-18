@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -28,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-gray-950 text-gray-100 min-h-screen`}
+        className={`${poppins.className} font-sans bg-gray-950 text-gray-100 min-h-screen`}
       >
         <div className="fixed inset-0 -z-10 overflow-hidden">
           <div className="absolute inset-0 bg-linear-to-br from-indigo-900/30 via-gray-900 to-gray-950">

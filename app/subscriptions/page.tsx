@@ -111,7 +111,7 @@ export default function SubscriptionsPage() {
 
   /** Skeleton Loader */
   const Loading = () => (
-    <div className="min-h-screen bg-gray-50 p-8 font-['Poppins']">
+    <div className="min-h-screen bg-gray-50 p-8 font-sans">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">
           Your Subscriptions

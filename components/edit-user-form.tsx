@@ -159,7 +159,7 @@ export default function EditUserForm({ user }: EditUserFormProps) {
   if (isLoading) return <Loading />;
 
   return (
-    <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-sm">
+    <div className="max-w-md mx-auto p-6 bg-gray-900 rounded-xl shadow-lg border border-gray-800 font-poppins">
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Edit Profile</h2>
       <p className="text-gray-600 mb-8">Update your name, email or password</p>
 
