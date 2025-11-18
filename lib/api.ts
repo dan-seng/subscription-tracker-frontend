@@ -70,7 +70,7 @@ export const api = {
     return this.request("PUT", path, body);
   },
 
-  delete(path: string) {
-    return this.request("DELETE", path);
-  },
+  delete(path: string, body?: any) {
+    return this.request("DELETE", path, body);
+  }
 };
