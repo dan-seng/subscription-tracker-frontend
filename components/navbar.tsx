@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { LayoutDashboard, PlusCircle, Settings, LogOut, Menu, List } from 'lucide-react';
+import { LayoutDashboard, PlusCircle, Settings, LogOut, Menu, List, Info } from 'lucide-react';
 
 const navLinks = [
   { path: '/subscriptions/dashboard', name: 'Dashboard', icon: <LayoutDashboard className="h-5 w-5" /> },
   { path: '/subscriptions', name: 'Subscriptions', icon: <List className="h-5 w-5" /> },
-  { path: '/subscriptions/create', name: 'Add Subscription', icon: <PlusCircle className="h-5 w-5" /> }
+  { path: '/subscriptions/create', name: 'Add Subscription', icon: <PlusCircle className="h-5 w-5" /> },
+  { path: '/about', name: 'About', icon: <Info className="h-5 w-5" /> }
 ];
 
 export default function Navbar() {
@@ -141,4 +142,3 @@ export default function Navbar() {
     </motion.nav>
   );
 }
-  
