@@ -15,13 +15,17 @@ import {
 import { API_URL } from "@/lib/api";
 import Loading from "./loading";
 
+interface EditUserFormProps {
+  user: UserData;
+}
+
 type UserData = {
   id: string;
   name: string;
   email: string;
 };
 
-export default function EditUserForm() {
+export default function EditUserForm({ user }: EditUserFormProps) {
   const router = useRouter();
   const { id } = useParams(); // get user id from URL
 
