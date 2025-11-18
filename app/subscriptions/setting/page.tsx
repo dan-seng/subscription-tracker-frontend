@@ -33,10 +33,25 @@ const fadeInUp: Variants = {
 
 export default function SettingsPage() {
   const [userData, setUserData] = useState<UserData | null>(null);
+  const [storedUser, setStoredUser] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
+
+  // Load localStorage safely
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const saved = localStorage.getItem("user");
+    if (saved) {
+      try {
+        setStoredUser(JSON.parse(saved));
+      } catch {
+        setStoredUser(null);
+      }
+    }
+  }, []);
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -61,7 +76,7 @@ export default function SettingsPage() {
           throw new Error(data.message || `Error: ${response.status}`);
         }
 
-        const user = data.data; // <-- FIX: Extract user from data.data
+        const user = data.data;
 
         setUserData({
           id: user._id,
@@ -69,7 +84,6 @@ export default function SettingsPage() {
           email: user.email,
         });
 
-        setError(null);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : "Failed to load user data";
         setError(errorMessage);
@@ -84,6 +98,7 @@ export default function SettingsPage() {
 
     fetchUserData();
   }, [router]);
+
 
   if (isLoading) {
     return (
