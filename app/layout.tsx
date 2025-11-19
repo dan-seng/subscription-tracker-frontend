@@ -9,11 +9,18 @@ const poppins = Poppins({
   display: "swap",
 });
 
+
 export const metadata: Metadata = {
   title: "SubTrack | Modern Subscription Manager",
   description: "Track, manage, and optimize all your subscriptions in one place.",
-  themeColor: "#0f172a"
+  themeColor: "#0f172a",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
+
 
 export default function RootLayout({
   children,
